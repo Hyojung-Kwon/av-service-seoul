@@ -156,7 +156,7 @@
 
 
 <!-- ── 광화문 ── -->
-<text x="280" y="148" text-anchor="middle" font-size="12" font-weight="800" fill="#4a3818" letter-spacing="0.5">광 화 문</text>
+<text x="289" y="205" text-anchor="middle" font-size="12" font-weight="800" fill="#4a3818" letter-spacing="0.5">광 화 문</text>
 
 
 
@@ -190,99 +190,106 @@
 <text x="1282" y="470" text-anchor="middle" font-size="10" fill="white" font-weight="800">🔄 회차점</text>
 
 <!-- ══════════════════════════════════════════════════════ -->
-<!-- ── A01 버스 노선 (실제 노선도 반영)                  -->
-<!-- ── 북측: 동진(출발) / 남측: 서진(귀환)               -->
+<!-- ── A01 버스 노선 (시계반대방향 순환)                  -->
+<!-- ── 남측(y=415): 동진 출발 / 북측(y=365): 서진 귀환   -->
 <!-- ══════════════════════════════════════════════════════ -->
 
-<!-- 북측 노선 (동진, y=365) -->
-<line x1="80" y1="365" x2="1210" y2="365" stroke="#0369a1" stroke-width="5.5" opacity="0.95"/>
-<!-- 동진 화살표 -->
-<polygon points="187,357 209,365 187,373" fill="#0369a1" opacity="0.95"/>
-<polygon points="381,357 403,365 381,373" fill="#0369a1" opacity="0.95"/>
-<polygon points="543,357 565,365 543,373" fill="#0369a1" opacity="0.95"/>
-<polygon points="696,357 718,365 696,373" fill="#0369a1" opacity="0.95"/>
-<polygon points="865,357 887,365 865,373" fill="#0369a1" opacity="0.95"/>
-<polygon points="1082,357 1104,365 1082,373" fill="#0369a1" opacity="0.95"/>
+<!-- 남측 노선 (동진 출발, y=415) -->
+<line x1="80" y1="415" x2="1210" y2="415" stroke="#0369a1" stroke-width="5.5" opacity="0.95"/>
+<!-- 동진 화살표 (출발) -->
+<polygon points="165,407 187,415 165,423" fill="#0369a1" opacity="0.95"/>
+<polygon points="359,407 381,415 359,423" fill="#0369a1" opacity="0.95"/>
+<polygon points="521,407 543,415 521,423" fill="#0369a1" opacity="0.95"/>
+<polygon points="674,407 696,415 674,423" fill="#0369a1" opacity="0.95"/>
+<polygon points="843,407 865,415 843,423" fill="#0369a1" opacity="0.95"/>
+<polygon points="1060,407 1082,415 1060,423" fill="#0369a1" opacity="0.95"/>
 
-<!-- 남측 노선 (서진, y=415) -->
-<line x1="1210" y1="415" x2="80" y2="415" stroke="#0891b2" stroke-width="5.5" opacity="0.88"/>
-<!-- 서진 화살표 -->
-<polygon points="1082,407 1060,415 1082,423" fill="#0891b2" opacity="0.88"/>
-<polygon points="865,407 843,415 865,423" fill="#0891b2" opacity="0.88"/>
-<polygon points="696,407 674,415 696,423" fill="#0891b2" opacity="0.88"/>
-<polygon points="543,407 521,415 543,423" fill="#0891b2" opacity="0.88"/>
-<polygon points="381,407 359,415 381,423" fill="#0891b2" opacity="0.88"/>
-<polygon points="187,407 165,415 187,423" fill="#0891b2" opacity="0.88"/>
+<!-- 북측 노선 (서진 귀환, y=365) -->
+<line x1="1210" y1="365" x2="80" y2="365" stroke="#0891b2" stroke-width="5.5" opacity="0.88"/>
+<!-- 서진 화살표 (귀환) -->
+<polygon points="1104,357 1082,365 1104,373" fill="#0891b2" opacity="0.88"/>
+<polygon points="887,357 865,365 887,373" fill="#0891b2" opacity="0.88"/>
+<polygon points="718,357 696,365 718,373" fill="#0891b2" opacity="0.88"/>
+<polygon points="565,357 543,365 565,373" fill="#0891b2" opacity="0.88"/>
+<polygon points="403,357 381,365 403,373" fill="#0891b2" opacity="0.88"/>
+<polygon points="209,357 187,365 209,373" fill="#0891b2" opacity="0.88"/>
 
-<!-- 동쪽 연결 (광장시장) -->
-<path d="M 1210 365 Q 1224 365 1224 390 Q 1224 415 1210 415" stroke="#0369a1" stroke-width="5.5" fill="none" opacity="0.9"/>
-<!-- 서쪽 연결 (청계광장) -->
-<path d="M 80 415 Q 66 415 66 390 Q 66 365 80 365" stroke="#0891b2" stroke-width="5.5" fill="none" opacity="0.88"/>
+<!-- 동쪽 연결 (광장시장: 출발→귀환) -->
+<path d="M 1210 415 Q 1224 415 1224 390 Q 1224 365 1210 365" stroke="#0369a1" stroke-width="5.5" fill="none" opacity="0.9"/>
+<!-- 서쪽 연결 (청계광장: 귀환→출발) -->
+<path d="M 80 365 Q 66 365 66 390 Q 66 415 80 415" stroke="#0891b2" stroke-width="5.5" fill="none" opacity="0.88"/>
 
-<!-- ── 북측 정류장 labels ── -->
+<!-- ── 남측 정류장 labels (출발 동향) ── -->
 <!-- 청계1가.광교 -->
-<circle cx="295" cy="365" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
-<circle cx="295" cy="365" r="4" fill="#0369a1"/>
-<text x="295" y="352" text-anchor="middle" font-size="9" fill="#334155">청계1가.</text>
-<text x="295" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">광교</text>
+<circle cx="295" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
+<circle cx="295" cy="415" r="4" fill="#0369a1"/>
+<text x="295" y="438" text-anchor="middle" font-size="9" fill="#334155">청계1가.</text>
+<text x="295" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">광교</text>
 <!-- 청계2가.삼일교 -->
-<circle cx="468" cy="365" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
-<circle cx="468" cy="365" r="4" fill="#0369a1"/>
-<text x="468" y="352" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
-<text x="468" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">삼일교</text>
-<!-- 청계2가.수표교 -->
-<circle cx="618" cy="365" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
-<circle cx="618" cy="365" r="4" fill="#0369a1"/>
-<text x="618" y="352" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
-<text x="618" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">수표교</text>
+<circle cx="468" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
+<circle cx="468" cy="415" r="4" fill="#0369a1"/>
+<text x="468" y="438" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
+<text x="468" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">삼일교</text>
 <!-- 청계3가.관수교 -->
-<circle cx="775" cy="365" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
-<circle cx="775" cy="365" r="4" fill="#0369a1"/>
-<text x="775" y="352" text-anchor="middle" font-size="9" fill="#334155">청계3가.</text>
-<text x="775" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">관수교</text>
-<!-- 청계4가.세운교 -->
-<circle cx="955" cy="365" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
-<circle cx="955" cy="365" r="4" fill="#0369a1"/>
-<text x="955" y="352" text-anchor="middle" font-size="9" fill="#334155">청계4가.</text>
-<text x="955" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">세운교</text>
-<!-- 청계5가.광장시장 (종점) -->
-<circle cx="1210" cy="365" r="12" fill="white" stroke="#dc2626" stroke-width="3"/>
-<circle cx="1210" cy="365" r="6"  fill="#dc2626"/>
-<text x="1210" y="350" text-anchor="middle" font-size="9" fill="#334155">청계5가.</text>
-<text x="1210" y="340" text-anchor="middle" font-size="10" font-weight="800" fill="#dc2626">광장시장</text>
-
-<!-- ── 남측 정류장 labels ── -->
-<!-- 청계5가.광장시장 (귀환 시작) -->
+<circle cx="775" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
+<circle cx="775" cy="415" r="4" fill="#0369a1"/>
+<text x="775" y="438" text-anchor="middle" font-size="9" fill="#334155">청계3가.</text>
+<text x="775" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">관수교</text>
+<!-- 청계4가.배오개다리 -->
+<circle cx="955" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
+<circle cx="955" cy="415" r="4" fill="#0369a1"/>
+<text x="955" y="438" text-anchor="middle" font-size="9" fill="#334155">청계4가.</text>
+<text x="955" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">배오개다리</text>
+<!-- 청계5가.광장시장 (동쪽 종점) -->
 <circle cx="1210" cy="415" r="12" fill="white" stroke="#dc2626" stroke-width="3"/>
 <circle cx="1210" cy="415" r="6"  fill="#dc2626"/>
 <text x="1210" y="439" text-anchor="middle" font-size="9" fill="#334155">청계5가.</text>
 <text x="1210" y="451" text-anchor="middle" font-size="10" font-weight="800" fill="#dc2626">광장시장</text>
-<!-- 청계4가.배오개다리 -->
-<circle cx="955" cy="415" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
-<circle cx="955" cy="415" r="4" fill="#0891b2"/>
-<text x="955" y="438" text-anchor="middle" font-size="9" fill="#334155">청계4가.</text>
-<text x="955" y="450" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">배오개다리</text>
+
+<!-- ── 북측 정류장 labels (귀환 서향) ── -->
+<!-- 청계5가.광장시장 -->
+<circle cx="1210" cy="365" r="12" fill="white" stroke="#dc2626" stroke-width="3"/>
+<circle cx="1210" cy="365" r="6"  fill="#dc2626"/>
+<text x="1210" y="350" text-anchor="middle" font-size="9" fill="#334155">청계5가.</text>
+<text x="1210" y="340" text-anchor="middle" font-size="10" font-weight="800" fill="#dc2626">광장시장</text>
+<!-- 청계4가.세운교 -->
+<circle cx="955" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="955" cy="365" r="4" fill="#0891b2"/>
+<text x="955" y="352" text-anchor="middle" font-size="9" fill="#334155">청계4가.</text>
+<text x="955" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">세운교</text>
 <!-- 청계3가.관수교 -->
-<circle cx="775" cy="415" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
-<circle cx="775" cy="415" r="4" fill="#0891b2"/>
-<text x="775" y="438" text-anchor="middle" font-size="9" fill="#334155">청계3가.</text>
-<text x="775" y="450" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">관수교</text>
+<circle cx="775" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="775" cy="365" r="4" fill="#0891b2"/>
+<text x="775" y="352" text-anchor="middle" font-size="9" fill="#334155">청계3가.</text>
+<text x="775" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">관수교</text>
+<!-- 청계2가.수표교 -->
+<circle cx="618" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="618" cy="365" r="4" fill="#0891b2"/>
+<text x="618" y="352" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
+<text x="618" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">수표교</text>
 <!-- 청계2가.삼일교 -->
-<circle cx="468" cy="415" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
-<circle cx="468" cy="415" r="4" fill="#0891b2"/>
-<text x="468" y="438" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
-<text x="468" y="450" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">삼일교</text>
-<!-- 청계1가.광교 -->
-<circle cx="295" cy="415" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
-<circle cx="295" cy="415" r="4" fill="#0891b2"/>
-<text x="295" y="438" text-anchor="middle" font-size="9" fill="#334155">청계1가.</text>
-<text x="295" y="450" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">광교</text>
+<circle cx="468" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="468" cy="365" r="4" fill="#0891b2"/>
+<text x="468" y="352" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
+<text x="468" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">삼일교</text>
+<!-- 청계1가.장통교 -->
+<circle cx="295" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="295" cy="365" r="4" fill="#0891b2"/>
+<text x="295" y="352" text-anchor="middle" font-size="9" fill="#334155">청계1가.</text>
+<text x="295" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">장통교</text>
 
 <!-- ── 버스 출발 마커 (청계광장 중앙) ── -->
 <circle cx="58" cy="390" r="14" fill="#1d4ed8" stroke="white" stroke-width="2.5" filter="url(#sh2)"/>
 <text x="58" y="396" text-anchor="middle" font-size="11">🚌</text>
 <text x="58" y="414" text-anchor="middle" font-size="9.5" font-weight="800" fill="#1e3a8a">청계광장</text>
 <text x="58" y="426" text-anchor="middle" font-size="8.5" fill="#475569">(출·도착점)</text>
+
+<!-- ── 시청역 ── -->
+<text x="58" y="502" text-anchor="middle" font-size="11" font-weight="800" fill="#3a3530">시청역</text>
+<text x="58" y="514" text-anchor="middle" font-size="8.5" fill="#6a6258">1 · 2호선</text>
+
+<!-- ── 무교동 ── -->
+<text x="72" y="456" text-anchor="middle" font-size="13" font-weight="900" fill="#2a2018" letter-spacing="0.5">무교동</text>
 
 <!-- ── 타이틀 카드 (compact) ── -->
 <rect x="24" y="24" width="232" height="72" rx="12" fill="white" opacity="0.95" filter="url(#sh2)"/>
@@ -296,8 +303,8 @@
 <text x="136" y="81" font-size="8" fill="#475569">순환버스</text>
 
 <!-- ── 범례 ── -->
-<rect x="24" y="578" width="228" height="116" rx="12" fill="white" opacity="0.95" filter="url(#sh2)"/>
-<rect x="24" y="578" width="6" height="116" rx="3" fill="#d97706"/>
+<rect x="24" y="578" width="228" height="98" rx="12" fill="white" opacity="0.95" filter="url(#sh2)"/>
+<rect x="24" y="578" width="6" height="98" rx="3" fill="#d97706"/>
 <text x="42" y="598" font-size="10.5" font-weight="800" fill="#334155">맛집 아이콘 범례</text>
 <circle cx="47" cy="614" r="7" fill="#dc2626"/><text x="61" y="618" font-size="10" fill="#475569">한식 · 국물 요리</text>
 <circle cx="47" cy="631" r="7" fill="#0891b2"/><text x="61" y="635" font-size="10" fill="#475569">냉면 · 면류</text>
@@ -305,8 +312,7 @@
 <circle cx="47" cy="665" r="7" fill="#d97706"/><text x="61" y="669" font-size="10" fill="#475569">시장 · 분식</text>
 <circle cx="148" cy="614" r="7" fill="#059669"/><text x="162" y="618" font-size="10" fill="#475569">베이커리</text>
 <circle cx="148" cy="631" r="7" fill="#7c3aed"/><text x="162" y="635" font-size="10" fill="#475569">쌈 · 보쌈</text>
-<circle cx="148" cy="648" r="7" fill="#ea580c"/><text x="162" y="652" font-size="10" fill="#475569">인도 커리</text>
-<circle cx="148" cy="665" r="7" fill="#b45309"/><text x="162" y="669" font-size="10" fill="#475569">라멘</text>
+<circle cx="148" cy="648" r="7" fill="#b45309"/><text x="162" y="652" font-size="10" fill="#475569">라멘</text>
 
 <!-- ── 맛집 마커 (JS) ── -->
 <g id="rg"></g>
@@ -335,7 +341,7 @@ const data = [
   // ─── 청계천 북쪽 ───
   {
     name: "아베베베이커리", cat: "베이커리 · 카페",
-    emoji: "🍩", color: "#059669", x: 432, y: 322, side: "N",
+    emoji: "🍩", color: "#059669", x: 1095, y: 330, side: "N",
     menu: [["헤이즐넛 크림빵","4,500원"],["우유 크림빵","3,900원"],["땅콩 크림 도너츠","3,300원"],["아메리카노","4,300원"]],
     note: "📍 광장시장 청계천로 (제주 아베베 서울점)\n💬 디저트 + 커피 코스로 추천",
     link: "https://map.naver.com/p/entry/place/1723070136"
@@ -364,23 +370,23 @@ const data = [
   // ─── 청계천 남쪽 ───
   {
     name: "무교동 북어국집", cat: "북어해장국",
-    emoji: "🥣", color: "#dc2626", x: 262, y: 432, side: "S",
+    emoji: "🥣", color: "#dc2626", x: 135, y: 432, side: "S",
     menu: [["북어해장국","10,000원"],["계란후라이 추가","500원"]],
     note: "📍 무교동 · 청계광장 근처\n💬 북어해장국 단일 메뉴 · 해장 명소",
     link: "https://map.naver.com/p/entry/place/11619941"
   },
   {
     name: "손정보쌈", cat: "족발 · 보쌈",
-    emoji: "🍖", color: "#7c3aed", x: 522, y: 435, side: "S",
+    emoji: "🍖", color: "#7c3aed", x: 490, y: 275, side: "N",
     menu: [["가브리 보쌈정식","12,000원"],["(특) 가브리 보쌈정식","16,000원"],["직화매콤 돼지불백","11,000원"],["얼큰 알곤이 칼국수","11,000원"]],
-    note: "📍 청계천 남쪽\n💬 점심 정식 가성비 좋음",
+    note: "📍 청계천 북쪽 (을지로 인근)\n💬 점심 정식 가성비 좋음",
     link: "https://map.naver.com/p/entry/place/2035632969"
   },
   {
     name: "진중 우육면관 본점", cat: "대만식 우육면",
-    emoji: "🍜", color: "#0891b2", x: 698, y: 438, side: "S",
+    emoji: "🍜", color: "#0891b2", x: 698, y: 232, side: "N",
     menu: [["우육면","12,000원"],["우육면 진 (프리미엄)","15,000원"],["수교 (물만두)","8,000원"],["오이소채","3,000원"]],
-    note: "📍 청계천 남쪽\n💬 대만식 우육면 명소 · 웨이팅 있음",
+    note: "📍 청계천 북쪽\n💬 대만식 우육면 명소 · 웨이팅 있음",
     link: "https://map.naver.com/p/entry/place/1124361834"
   },
   {
@@ -393,7 +399,7 @@ const data = [
   // ─── 광장시장 ───
   {
     name: "광장시장 찹쌀꽈배기", cat: "시장 간식",
-    emoji: "🥨", color: "#d97706", x: 1132, y: 300, side: "N",
+    emoji: "🥨", color: "#d97706", x: 1132, y: 268, side: "N",
     menu: [["찹쌀꽈배기","1개 1,000원"],["팥도너츠","1,500원"],["흑미찹쌀 도넛","1,000원"],["고구마찹쌀 도넛","1,500원"]],
     note: "📍 광장시장 내부\n💬 줄 서서 먹는 명물 간식",
     link: "https://map.naver.com/p/entry/place/1993928504"
@@ -408,21 +414,14 @@ const data = [
   // ─── 추가 식당 ───
   {
     name: "광화문미진", cat: "메밀소바",
-    emoji: "🍵", color: "#0e7490", x: 175, y: 272, side: "N",
+    emoji: "🍵", color: "#0e7490", x: 188, y: 282, side: "N",
     menu: [["냉메밀","12,000원"],["온메밀","12,000원"],["비빔메밀","12,000원"],["메밀전병","7,000원"],["왕만두","7,000원"]],
     note: "📍 종로 19 르메이에르종로타운1 1F\n💬 1954년 창업 노포 · 미쉐린 빕구르망",
     link: "https://map.naver.com/p/entry/place/11680222"
   },
   {
-    name: "두르가", cat: "인도 커리",
-    emoji: "🍛", color: "#ea580c", x: 308, y: 238, side: "N",
-    menu: [["런치A 세트","19,000원"],["런치C 세트","22,000원"],["탈리 세트","25,000원"],["갈릭난","3,500원"],["사모사","6,000원"]],
-    note: "📍 종로 19 르메이에르종로타운1 B1\n💬 브레이크타임 15:00–17:00",
-    link: "https://map.naver.com/p/entry/place/11873695"
-  },
-  {
     name: "츠키라멘", cat: "일본식 라멘",
-    emoji: "🍜", color: "#b45309", x: 375, y: 280, side: "N",
+    emoji: "🍜", color: "#b45309", x: 292, y: 280, side: "N",
     menu: [["쇼유라멘","11,000원"],["돈코츠라멘","11,000원"],["교카이돈코츠","11,500원"],["마제소바","12,500원"],["츠케멘","13,000원"]],
     note: "📍 종로 19 르메이에르종로타운1 B1\n💬 브레이크타임 14:30–17:30",
     link: "https://map.naver.com/p/entry/place/1075471984"
@@ -572,9 +571,8 @@ function closeP() {
   currentOpen = null;
 }
 
-// ── 정류장 클릭 → 네이버 지도 (실제 정류장 ID 반영) ──
-// 북측(y=365) = 출발 방향, 남측(y=415) = 귀환 방향 — 각각 다른 정류장 ID
-const stopData = [
+// ── 정류장 클릭 → 네이버 지도 (SVG <a> 네이티브 링크 방식) ──
+const stopLinks = [
   { x: 80,
     n: { label: "청계광장 (출발)", url: "https://map.naver.com/p/entry/bus-stop/55065362" },
     s: { label: "청계광장 (귀환)", url: "https://map.naver.com/p/entry/bus-stop/55065362" } },
@@ -598,26 +596,32 @@ const stopData = [
     s: { label: "청계5가.광장시장", url: "https://map.naver.com/p/entry/bus-stop/111712" } },
 ];
 
-const svgEl = document.querySelector('svg');
-const rgEl  = document.getElementById('rg');
+const mapSvg = document.querySelector('svg');
+const mapRg  = document.getElementById('rg');
 
-stopData.forEach(s => {
+stopLinks.forEach(s => {
   [[365, s.n], [415, s.s]].forEach(([cy, info]) => {
     if (!info) return;
+    // SVG 네이티브 <a> — 팝업 차단 없이 새 탭으로 안정적으로 열림
+    const aEl = document.createElementNS(ns, 'a');
+    aEl.setAttribute('href', info.url);
+    aEl.setAttribute('target', '_blank');
+    aEl.setAttribute('rel', 'noopener noreferrer');
+    aEl.style.cursor = 'pointer';
+
+    const tt = document.createElementNS(ns, 'title');
+    tt.textContent = info.label + ' — 네이버 지도에서 보기';
+    aEl.appendChild(tt);
+
+    // fill="rgba(0,0,0,0)" → transparent이지만 hit area 확실히 확보
     const c = document.createElementNS(ns, 'circle');
     c.setAttribute('cx', s.x);
     c.setAttribute('cy', cy);
     c.setAttribute('r',  '20');
-    c.setAttribute('fill', 'transparent');
-    c.style.cursor = 'pointer';
-    const tt = document.createElementNS(ns, 'title');
-    tt.textContent = info.label + ' — 네이버 지도에서 보기';
-    c.appendChild(tt);
-    c.addEventListener('click', (e) => {
-      e.stopPropagation();
-      window.open(info.url, '_blank', 'noopener');
-    });
-    svgEl.insertBefore(c, rgEl);
+    c.setAttribute('fill', 'rgba(0,0,0,0)');
+    aEl.appendChild(c);
+
+    mapSvg.insertBefore(aEl, mapRg);
   });
 });
 </script>
