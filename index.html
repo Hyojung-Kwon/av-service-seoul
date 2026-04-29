@@ -392,7 +392,7 @@ const data = [
   // ─── 광장시장 ───
   {
     name: "광장시장 찹쌀꽈배기", cat: "시장 간식",
-    emoji: "🥨", color: "#d97706", x: 1132, y: 268, side: "N",
+    emoji: "🥨", color: "#d97706", x: 1132, y: 268, side: "N", emojiOffset: 22,
     menu: [["찹쌀꽈배기","1개 1,000원"],["팥도너츠","1,500원"],["흑미찹쌀 도넛","1,000원"],["고구마찹쌀 도넛","1,500원"]],
     note: "📍 광장시장 내부\n💬 줄 서서 먹는 명물 간식",
     link: "https://map.naver.com/p/entry/place/1993928504"
@@ -430,9 +430,10 @@ data.forEach(r => {
   grp.setAttribute('class', 'rest-g');
 
   const isN    = r.side === 'N';
-  const emojiY = isN ? r.y - 78 : r.y + 82;
+  const eoOff  = r.emojiOffset || 0;
+  const emojiY = isN ? r.y - 78 - eoOff : r.y + 82 + eoOff;
   const conn1  = isN ? r.y - 14  : r.y + 14;
-  const conn2  = isN ? r.y - 60  : r.y + 64;
+  const conn2  = isN ? r.y - 60 - eoOff : r.y + 64 + eoOff;
   const pillY  = isN ? r.y - 56  : r.y + 91;
   const textY  = isN ? r.y - 41  : r.y + 105;
   const pw     = r.name.length * 10 + 22;
