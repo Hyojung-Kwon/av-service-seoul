@@ -155,8 +155,6 @@
 <text x="1348" y="215" text-anchor="end" font-size="10" fill="#a89880" font-style="italic" letter-spacing="1">종 로</text>
 
 
-<!-- ── 광화문 ── -->
-<text x="289" y="205" text-anchor="middle" font-size="12" font-weight="800" fill="#4a3818" letter-spacing="0.5">광 화 문</text>
 
 
 
@@ -624,6 +622,23 @@ stopLinks.forEach(s => {
     mapSvg.insertBefore(aEl, mapRg);
   });
 });
+
+// 청계광장 버스 마커(cx=58, cy=390) 클릭 → 네이버 지도
+const busMarkerLink = document.createElementNS(ns, 'a');
+busMarkerLink.setAttribute('href', 'https://map.naver.com/p/entry/bus-stop/55065362');
+busMarkerLink.setAttribute('target', '_blank');
+busMarkerLink.setAttribute('rel', 'noopener noreferrer');
+busMarkerLink.style.cursor = 'pointer';
+const busMarkerTt = document.createElementNS(ns, 'title');
+busMarkerTt.textContent = '청계광장 — 네이버 지도에서 보기';
+busMarkerLink.appendChild(busMarkerTt);
+const busMarkerHit = document.createElementNS(ns, 'circle');
+busMarkerHit.setAttribute('cx', '58');
+busMarkerHit.setAttribute('cy', '390');
+busMarkerHit.setAttribute('r', '22');
+busMarkerHit.setAttribute('fill', 'rgba(0,0,0,0)');
+busMarkerLink.appendChild(busMarkerHit);
+mapSvg.appendChild(busMarkerLink);
 </script>
 </body>
 </html>
