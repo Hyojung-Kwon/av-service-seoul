@@ -434,8 +434,8 @@ data.forEach(r => {
   const emojiY = isN ? r.y - 78 - eoOff : r.y + 82 + eoOff;
   const conn1  = isN ? r.y - 14  : r.y + 14;
   const conn2  = isN ? r.y - 60 - eoOff : r.y + 64 + eoOff;
-  const pillY  = isN ? r.y - 56  : r.y + 91;
-  const textY  = isN ? r.y - 41  : r.y + 105;
+  const pillY  = isN ? r.y - 56 - eoOff : r.y + 91 + eoOff;
+  const textY  = isN ? r.y - 41 - eoOff : r.y + 105 + eoOff;
   const pw     = r.name.length * 10 + 22;
 
   // shadow circle behind emoji
