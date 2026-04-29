@@ -223,21 +223,16 @@
 <circle cx="295" cy="415" r="4" fill="#0369a1"/>
 <text x="295" y="438" text-anchor="middle" font-size="9" fill="#334155">청계1가.</text>
 <text x="295" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">광교</text>
-<!-- 청계1가.장통교 (귀환) -->
-<circle cx="170" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
-<circle cx="170" cy="415" r="4" fill="#0369a1"/>
-<text x="170" y="438" text-anchor="middle" font-size="9" fill="#334155">청계1가.</text>
-<text x="170" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">장통교</text>
 <!-- 청계2가.삼일교 -->
 <circle cx="468" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
 <circle cx="468" cy="415" r="4" fill="#0369a1"/>
 <text x="468" y="438" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
 <text x="468" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">삼일교</text>
-<!-- 청계3가.관수교 -->
-<circle cx="775" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
-<circle cx="775" cy="415" r="4" fill="#0369a1"/>
-<text x="775" y="438" text-anchor="middle" font-size="9" fill="#334155">청계3가.</text>
-<text x="775" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">관수교</text>
+<!-- 청계3가.관수교 (출발) -->
+<circle cx="618" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
+<circle cx="618" cy="415" r="4" fill="#0369a1"/>
+<text x="618" y="438" text-anchor="middle" font-size="9" fill="#334155">청계3가.</text>
+<text x="618" y="449" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">관수교</text>
 <!-- 청계4가.배오개다리 -->
 <circle cx="955" cy="415" r="9" fill="white" stroke="#0369a1" stroke-width="2.5"/>
 <circle cx="955" cy="415" r="4" fill="#0369a1"/>
@@ -255,26 +250,26 @@
 <circle cx="1210" cy="365" r="6"  fill="#dc2626"/>
 <text x="1210" y="350" text-anchor="middle" font-size="9" fill="#334155">청계5가.</text>
 <text x="1210" y="340" text-anchor="middle" font-size="10" font-weight="800" fill="#dc2626">광장시장</text>
-<!-- 청계4가.배오개다리 (출발) -->
+<!-- 청계4가.세운교 (귀환) -->
 <circle cx="955" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
 <circle cx="955" cy="365" r="4" fill="#0891b2"/>
 <text x="955" y="352" text-anchor="middle" font-size="9" fill="#334155">청계4가.</text>
-<text x="955" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">배오개다리</text>
-<!-- 청계2가.수표교 -->
+<text x="955" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">세운교</text>
+<!-- 청계3가.관수교 (귀환) -->
+<circle cx="775" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
+<circle cx="775" cy="365" r="4" fill="#0891b2"/>
+<text x="775" y="352" text-anchor="middle" font-size="9" fill="#334155">청계3가.</text>
+<text x="775" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">관수교</text>
+<!-- 청계2가.수표교 (귀환) -->
 <circle cx="618" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
 <circle cx="618" cy="365" r="4" fill="#0891b2"/>
 <text x="618" y="352" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
 <text x="618" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">수표교</text>
-<!-- 청계2가.삼일교 -->
+<!-- 청계2가.삼일교 (귀환) -->
 <circle cx="468" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
 <circle cx="468" cy="365" r="4" fill="#0891b2"/>
 <text x="468" y="352" text-anchor="middle" font-size="9" fill="#334155">청계2가.</text>
 <text x="468" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">삼일교</text>
-<!-- 청계1가.장통교 -->
-<circle cx="295" cy="365" r="9" fill="white" stroke="#0891b2" stroke-width="2.5"/>
-<circle cx="295" cy="365" r="4" fill="#0891b2"/>
-<text x="295" y="352" text-anchor="middle" font-size="9" fill="#334155">청계1가.</text>
-<text x="295" y="342" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">장통교</text>
 
 <!-- ── 버스 출발 마커 (청계광장 중앙) ── -->
 <circle cx="58" cy="390" r="14" fill="#1d4ed8" stroke="white" stroke-width="2.5" filter="url(#sh2)"/>
@@ -569,26 +564,23 @@ function closeP() {
   currentOpen = null;
 }
 
-// ── 정류장 클릭 → 네이버 지도 (SVG <a> 네이티브 링크 방식) ──
+// ── 정류장 클릭 → 네이버 지도 ── n=출발(남측 y=415), s=귀환(북측 y=365)
 const stopLinks = [
-  { x: 80,
-    n: { label: "청계광장 (출발)", url: "https://map.naver.com/p/entry/bus-station/55065362" },
-    s: null },
   { x: 295,
-    n: { label: "청계1가.장통교 (출발)", url: "https://map.naver.com/p/entry/bus-station/110255" },
-    s: { label: "청계1가.광교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/194133" } },
+    n: { label: "청계1가.광교 (출발)", url: "https://map.naver.com/p/entry/bus-station/110255" },
+    s: null },
   { x: 468,
     n: { label: "청계2가.삼일교 (출발)", url: "https://map.naver.com/p/entry/bus-station/110256" },
-    s: { label: "청계2가.삼일교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/105024" } },
+    s: { label: "청계2가.삼일교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/194133" } },
   { x: 618,
-    n: { label: "청계2가.수표교 (출발)", url: "https://map.naver.com/p/entry/bus-station/80179" },
-    s: null },
+    n: { label: "청계3가.관수교 (출발)", url: "https://map.naver.com/p/entry/bus-station/80179" },
+    s: { label: "청계2가.수표교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/105024" } },
   { x: 775,
     n: null,
     s: { label: "청계3가.관수교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/151559" } },
   { x: 955,
     n: { label: "청계4가.배오개다리 (출발)", url: "https://map.naver.com/p/entry/bus-station/110257" },
-    s: { label: "청계4가.배오개다리 (귀환)", url: "https://map.naver.com/p/entry/bus-station/105118" } },
+    s: { label: "청계4가.세운교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/105118" } },
   { x: 1210,
     n: { label: "청계5가.광장시장 (회차점)", url: "https://map.naver.com/p/entry/bus-station/111712" },
     s: { label: "청계5가.광장시장 (회차점)", url: "https://map.naver.com/p/entry/bus-station/111712" } },
@@ -615,13 +607,11 @@ function addStopHit(cx, cy, url, label) {
 }
 
 stopLinks.forEach(s => {
-  if (s.n) addStopHit(s.x, 365, s.n.url, s.n.label);
-  if (s.s) addStopHit(s.x, 415, s.s.url, s.s.label);
+  if (s.n) addStopHit(s.x, 415, s.n.url, s.n.label);
+  if (s.s) addStopHit(s.x, 365, s.s.url, s.s.label);
 });
 
-// 청계광장 버스 마커(cx=58, cy=390) + 장통교 귀환(x=170, y=415)
 addStopHit(58, 390, 'https://map.naver.com/p/entry/bus-station/55065362', '청계광장');
-addStopHit(170, 415, 'https://map.naver.com/p/entry/bus-station/104928', '청계1가.장통교 (귀환)');
 </script>
 </body>
 </html>
