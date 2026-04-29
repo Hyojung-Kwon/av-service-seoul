@@ -577,26 +577,26 @@ function closeP() {
 // ── 정류장 클릭 → 네이버 지도 (SVG <a> 네이티브 링크 방식) ──
 const stopLinks = [
   { x: 80,
-    n: { label: "청계광장 (출발)", url: "https://map.naver.com/p/entry/bus-stop/02247" },
+    n: { label: "청계광장 (출발)", url: "https://map.naver.com/p/entry/bus-station/55065362" },
     s: null },
   { x: 295,
-    n: { label: "청계1가.장통교 (출발)", url: "https://map.naver.com/p/entry/bus-stop/02224" },
-    s: { label: "청계1가.광교 (귀환)", url: "https://map.naver.com/p/entry/bus-stop/01291" } },
+    n: { label: "청계1가.장통교 (출발)", url: "https://map.naver.com/p/entry/bus-station/110255" },
+    s: { label: "청계1가.광교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/194133" } },
   { x: 468,
-    n: { label: "청계2가.삼일교 (출발)", url: "https://map.naver.com/p/entry/bus-stop/02225" },
-    s: { label: "청계2가.삼일교 (귀환)", url: "https://map.naver.com/p/entry/bus-stop/01175" } },
+    n: { label: "청계2가.삼일교 (출발)", url: "https://map.naver.com/p/entry/bus-station/110256" },
+    s: { label: "청계2가.삼일교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/105024" } },
   { x: 618,
-    n: { label: "청계2가.수표교 (출발)", url: "https://map.naver.com/p/entry/bus-stop/02240" },
+    n: { label: "청계2가.수표교 (출발)", url: "https://map.naver.com/p/entry/bus-station/80179" },
     s: null },
   { x: 775,
-    n: { label: "청계3가.관수교 (출발)", url: "https://map.naver.com/p/entry/bus-stop/02226" },
-    s: { label: "청계3가.관수교 (귀환)", url: "https://map.naver.com/p/entry/bus-stop/01251" } },
+    n: { label: "청계3가.관수교 (출발)", url: "https://map.naver.com/p/entry/bus-station/110257" },
+    s: { label: "청계3가.관수교 (귀환)", url: "https://map.naver.com/p/entry/bus-station/151559" } },
   { x: 955,
     n: null,
-    s: { label: "청계4가.배오개다리 (귀환)", url: "https://map.naver.com/p/entry/bus-stop/01176" } },
+    s: { label: "청계4가.배오개다리 (귀환)", url: "https://map.naver.com/p/entry/bus-station/105118" } },
   { x: 1210,
-    n: { label: "청계5가.광장시장 (회차점)", url: "https://map.naver.com/p/entry/bus-stop/01177" },
-    s: { label: "청계5가.광장시장 (회차점)", url: "https://map.naver.com/p/entry/bus-stop/01177" } },
+    n: { label: "청계5가.광장시장 (회차점)", url: "https://map.naver.com/p/entry/bus-station/111712" },
+    s: { label: "청계5가.광장시장 (회차점)", url: "https://map.naver.com/p/entry/bus-station/111712" } },
 ];
 
 const mapSvg = document.querySelector('svg');
@@ -625,8 +625,8 @@ stopLinks.forEach(s => {
 });
 
 // 청계광장 버스 마커(cx=58, cy=390) + 장통교 귀환(x=170, y=415)
-addStopHit(58, 390, 'https://map.naver.com/p/entry/bus-stop/02247', '청계광장');
-addStopHit(170, 415, 'https://map.naver.com/p/entry/bus-stop/01174', '청계1가.장통교 (귀환)');
+addStopHit(58, 390, 'https://map.naver.com/p/entry/bus-station/55065362', '청계광장');
+addStopHit(170, 415, 'https://map.naver.com/p/entry/bus-station/104928', '청계1가.장통교 (귀환)');
 </script>
 </body>
 </html>
