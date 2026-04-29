@@ -597,48 +597,30 @@ const stopLinks = [
 const mapSvg = document.querySelector('svg');
 const mapRg  = document.getElementById('rg');
 
-stopLinks.forEach(s => {
-  [[365, s.n], [415, s.s]].forEach(([cy, info]) => {
-    if (!info) return;
-    // SVG 네이티브 <a> — 팝업 차단 없이 새 탭으로 안정적으로 열림
-    const aEl = document.createElementNS(ns, 'a');
-    aEl.setAttribute('href', info.url);
-    aEl.setAttribute('target', '_blank');
-    aEl.setAttribute('rel', 'noopener noreferrer');
-    aEl.style.cursor = 'pointer';
-
-    const tt = document.createElementNS(ns, 'title');
-    tt.textContent = info.label + ' — 네이버 지도에서 보기';
-    aEl.appendChild(tt);
-
-    // fill="rgba(0,0,0,0)" → transparent이지만 hit area 확실히 확보
-    const c = document.createElementNS(ns, 'circle');
-    c.setAttribute('cx', s.x);
-    c.setAttribute('cy', cy);
-    c.setAttribute('r',  '20');
-    c.setAttribute('fill', 'rgba(0,0,0,0)');
-    aEl.appendChild(c);
-
-    mapSvg.insertBefore(aEl, mapRg);
+function addStopHit(cx, cy, url, label) {
+  const c = document.createElementNS(ns, 'circle');
+  c.setAttribute('cx', cx);
+  c.setAttribute('cy', cy);
+  c.setAttribute('r', '20');
+  c.setAttribute('fill', 'rgba(0,0,0,0)');
+  c.style.cursor = 'pointer';
+  const tt = document.createElementNS(ns, 'title');
+  tt.textContent = label + ' — 네이버 지도에서 보기';
+  c.appendChild(tt);
+  c.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.open(url, '_blank', 'noopener,noreferrer');
   });
+  mapSvg.insertBefore(c, mapRg);
+}
+
+stopLinks.forEach(s => {
+  if (s.n) addStopHit(s.x, 365, s.n.url, s.n.label);
+  if (s.s) addStopHit(s.x, 415, s.s.url, s.s.label);
 });
 
 // 청계광장 버스 마커(cx=58, cy=390) 클릭 → 네이버 지도
-const busMarkerLink = document.createElementNS(ns, 'a');
-busMarkerLink.setAttribute('href', 'https://map.naver.com/p/entry/bus-stop/55065362');
-busMarkerLink.setAttribute('target', '_blank');
-busMarkerLink.setAttribute('rel', 'noopener noreferrer');
-busMarkerLink.style.cursor = 'pointer';
-const busMarkerTt = document.createElementNS(ns, 'title');
-busMarkerTt.textContent = '청계광장 — 네이버 지도에서 보기';
-busMarkerLink.appendChild(busMarkerTt);
-const busMarkerHit = document.createElementNS(ns, 'circle');
-busMarkerHit.setAttribute('cx', '58');
-busMarkerHit.setAttribute('cy', '390');
-busMarkerHit.setAttribute('r', '22');
-busMarkerHit.setAttribute('fill', 'rgba(0,0,0,0)');
-busMarkerLink.appendChild(busMarkerHit);
-mapSvg.appendChild(busMarkerLink);
+addStopHit(58, 390, 'https://map.naver.com/p/entry/bus-stop/55065362', '청계광장');
 </script>
 </body>
 </html>
