@@ -3,358 +3,341 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>서클 레터 — Issue. 001</title>
+  <title>셔클 레터 Issue.001</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Poppins:wght@900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
-      background: #e8e9ef;
+      background: #dde0ea;
       color: #1a1a2e;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Layout shell ── */
+    /* ── Shell ── */
     .shell {
       max-width: 600px;
       margin: 0 auto;
-      background: #ffffff;
-      box-shadow: 0 4px 40px rgba(0,0,0,.15);
+      background: #fff;
+      box-shadow: 0 4px 40px rgba(0,0,0,.18);
     }
 
     /* ── Header ── */
     .header {
       position: relative;
-      background: #06080f;
-      height: 130px;
+      /* medium periwinkle blue — matches the reference image */
+      background: #6B86EE;
+      height: 172px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
+    /* Large solid "LETTER" — darker blue fill, spans full width and clips on both edges */
     .header__bg {
       position: absolute;
       inset: 0;
       display: flex;
       align-items: center;
-      /* slight leftward offset so the clipped letters show on edges */
-      padding-left: 12px;
-      gap: 0;
+      justify-content: center;
       pointer-events: none;
     }
 
     .header__bg span {
-      font-size: 108px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 218px;
       font-weight: 900;
-      letter-spacing: -4px;
+      letter-spacing: 2px;
       line-height: 1;
-      color: transparent;
-      -webkit-text-stroke: 2px rgba(60, 110, 240, 0.55);
+      /* solid filled darker blue — same hue, lower lightness */
+      color: #4A65D6;
       white-space: nowrap;
       user-select: none;
     }
 
+    /* Logo — rounded Nunito to match the friendly rounded letterforms */
     .header__logo {
       position: relative;
       z-index: 1;
-      color: #ffffff;
-      font-size: 34px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 44px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 0;
     }
 
-    .header__logo em {
-      color: #4d7cf4;
-      font-style: normal;
+    .header__logo .dot {
+      /* period rendered as a large round dot to match the original */
+      font-size: 52px;
+      line-height: 0;
+      vertical-align: -4px;
     }
 
     /* ── Meta bar ── */
+    /* Light blue-gray background, blue bold text — matches reference */
     .meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 11px 20px;
-      border-bottom: 1px solid #e2e4ed;
-      font-size: 12px;
-      color: #666;
-      letter-spacing: .2px;
+      padding: 14px 22px;
+      background: #E8EDF8;
+      font-size: 13px;
+      font-weight: 700;
+      color: #4A65D6;
+      font-family: 'Nunito', sans-serif;
+      letter-spacing: 0.1px;
     }
 
     /* ── Summary box ── */
     .summary {
-      margin: 22px 18px;
-      background: #e9edff;
+      margin: 20px 18px;
+      background: #eaedff;
       border-radius: 10px;
-      padding: 20px 22px;
+      padding: 18px 20px 20px;
     }
 
     .summary__title {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      margin-bottom: 14px;
       color: #1a1a2e;
+      margin-bottom: 13px;
     }
 
     .summary__list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
 
     .summary__list li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: 13.5px;
+      gap: 9px;
+      font-size: 12.5px;
       color: #333;
       line-height: 1.55;
     }
 
     .summary__num {
       flex-shrink: 0;
-      width: 22px;
-      height: 22px;
+      width: 19px;
+      height: 19px;
       border-radius: 50%;
-      background: #3d6ef5;
+      background: #3e6ef5;
       color: #fff;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 1px;
+      margin-top: 1.5px;
     }
 
     /* ── Hero image ── */
     .hero {
       position: relative;
       width: 100%;
-      /* 16:9-ish ratio */
-      aspect-ratio: 16 / 9;
-      background:
-        linear-gradient(160deg,
-          #0d1b3e 0%,
-          #12295a 30%,
-          #1a3566 55%,
-          #0b1e40 100%);
+      aspect-ratio: 530 / 308; /* matches original photo proportions */
       overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 60% at 68% 44%, #1e3f85 0%, #0d2050 55%, #060e28 100%);
     }
 
-    /* Fake car interior shapes */
+    /* Ambient glow layers mimicking window light */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 55% 40% at 62% 45%, rgba(74,142,230,.25) 0%, transparent 70%),
-        radial-gradient(ellipse 30% 20% at 62% 45%, rgba(120,180,255,.15) 0%, transparent 60%),
-        linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,.45) 100%);
+        radial-gradient(ellipse 48% 38% at 67% 40%, rgba(100,160,255,.28) 0%, transparent 60%),
+        radial-gradient(ellipse 28% 20% at 70% 38%, rgba(160,200,255,.14) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 30% at 30% 70%, rgba(10,30,80,.55) 0%, transparent 60%),
+        linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,.5) 100%);
     }
 
-    .hero__screen {
+    /* Simulated navigation tablet */
+    .hero__nav {
       position: absolute;
-      top: 18%;
-      left: 50%;
-      transform: translateX(-15%);
-      width: 42%;
-      aspect-ratio: 4/3;
-      background: #0a1428;
-      border-radius: 6px;
-      border: 1.5px solid rgba(80,140,220,.5);
+      top: 10%;
+      left: 52%;
+      width: 38%;
+      aspect-ratio: 1.35;
+      background: #071428;
+      border-radius: 5px;
+      border: 1.5px solid rgba(90,148,230,.5);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      gap: 6px;
-      overflow: hidden;
+      align-items: center;
+      gap: 5px;
     }
 
-    .hero__screen::before {
+    .hero__nav::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 40%, rgba(60,110,220,.35) 0%, transparent 70%);
+      background: radial-gradient(circle at 52% 38%, rgba(58,112,230,.42) 0%, transparent 65%);
     }
 
-    .hero__map-dot {
-      width: 8px;
-      height: 8px;
+    /* Map dot */
+    .nav__dot {
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: #4d7cf4;
-      box-shadow: 0 0 8px 3px rgba(77,124,244,.6);
+      background: #4b7df8;
+      box-shadow: 0 0 10px 4px rgba(75,125,248,.7);
       position: relative;
       z-index: 1;
     }
 
-    .hero__map-lines {
-      position: relative;
-      z-index: 1;
+    /* Map route lines */
+    .nav__lines {
       display: flex;
       flex-direction: column;
       gap: 4px;
-      width: 60%;
+      width: 62%;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero__map-lines span {
+    .nav__lines span {
       display: block;
       height: 2px;
-      background: rgba(100,160,255,.4);
       border-radius: 2px;
+      background: rgba(120,170,255,.42);
     }
 
-    .hero__map-lines span:nth-child(2) { width: 70%; }
-    .hero__map-lines span:nth-child(3) { width: 50%; }
+    .nav__lines span:nth-child(1) { width: 100%; }
+    .nav__lines span:nth-child(2) { width: 72%; }
+    .nav__lines span:nth-child(3) { width: 50%; }
 
-    .hero__dash {
+    /* Road / seat silhouette at bottom */
+    .hero__seat {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 28%;
-      background: linear-gradient(to top, #05111f, rgba(5,17,31,.6), transparent);
-    }
-
-    .hero__caption-bg {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 11px;
-      color: rgba(255,255,255,.7);
-      padding: 0 16px;
-      letter-spacing: .2px;
+      height: 35%;
+      background: linear-gradient(to top, #040d1e 0%, rgba(4,13,30,.7) 55%, transparent 100%);
     }
 
     .hero-caption {
-      font-size: 12px;
-      color: #777;
+      font-size: 11.5px;
+      color: #999;
       text-align: center;
-      padding: 10px 18px 16px;
-      line-height: 1.55;
+      padding: 9px 20px 15px;
+      line-height: 1.5;
     }
 
     /* ── Article ── */
     .article {
-      padding: 4px 22px 28px;
+      padding: 6px 22px 30px;
     }
 
     .article__title {
-      font-size: clamp(18px, 4vw, 22px);
+      font-size: clamp(18px, 3.8vw, 22px);
       font-weight: 900;
-      color: #1a1a2e;
-      line-height: 1.35;
-      margin-bottom: 20px;
-    }
-
-    .article__title strong {
-      color: #3d6ef5;
+      color: #0f1630;
+      line-height: 1.38;
+      margin-bottom: 18px;
     }
 
     .article__body {
-      font-size: 14px;
-      color: #444;
-      line-height: 1.85;
+      font-size: 13.5px;
+      color: #3a3a4a;
+      line-height: 1.92;
+      word-break: keep-all;
     }
 
-    .article__body p + p {
-      margin-top: 14px;
-    }
+    .article__body p + p { margin-top: 14px; }
 
     /* ── Related content ── */
     .related {
-      background: #eaecff;
-      padding: 26px 18px 28px;
+      background: #ebedff;
+      padding: 24px 18px 26px;
     }
 
     .related__title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
-      color: #1a1a2e;
-      margin-bottom: 16px;
+      color: #0f1630;
+      margin-bottom: 14px;
     }
 
     .cards {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .card {
       background: #fff;
       border-radius: 10px;
-      padding: 16px;
+      padding: 15px;
       display: flex;
-      gap: 14px;
+      gap: 12px;
       align-items: flex-start;
-      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+      box-shadow: 0 1px 5px rgba(0,0,0,.05);
       transition: box-shadow .2s;
     }
 
-    .card:hover {
-      box-shadow: 0 4px 18px rgba(61,110,245,.15);
-    }
+    .card:hover { box-shadow: 0 4px 16px rgba(62,110,245,.14); }
 
-    .card__body {
-      flex: 1;
-      min-width: 0;
-    }
+    .card__body { flex: 1; min-width: 0; }
 
     .card__title {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 6px;
+      color: #0f1630;
       line-height: 1.4;
+      margin-bottom: 5px;
     }
 
     .card__desc {
-      font-size: 12.5px;
-      color: #666;
+      font-size: 12px;
+      color: #888;
       line-height: 1.65;
-      margin-bottom: 12px;
+      margin-bottom: 11px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      word-break: keep-all;
     }
 
     .card__btn {
       display: inline-block;
-      background: #3d6ef5;
+      background: #3e6ef5;
       color: #fff;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 500;
-      padding: 6px 14px;
+      padding: 5px 13px;
       border-radius: 20px;
       text-decoration: none;
-      transition: background .2s, transform .15s;
+      transition: background .18s, transform .15s;
       white-space: nowrap;
     }
 
     .card__btn:hover {
-      background: #2555d8;
+      background: #2655d8;
       transform: translateY(-1px);
     }
 
+    /* Thumbnail */
     .card__thumb {
       flex-shrink: 0;
-      width: 82px;
-      height: 82px;
+      width: 80px;
+      height: 80px;
       border-radius: 8px;
       overflow: hidden;
     }
 
-    /* Gradient placeholders for thumbnails */
-    .thumb--1 { background: linear-gradient(135deg, #1e3a72, #2d5cab, #1a3060); }
-    .thumb--2 { background: linear-gradient(135deg, #1a305e, #3d72c0, #1a2a50); }
-    .thumb--3 { background: linear-gradient(135deg, #12294a, #2a4d8a, #1a3060); }
-
-    /* thumbnail inner art */
     .card__thumb-inner {
       width: 100%;
       height: 100%;
@@ -363,9 +346,28 @@
       justify-content: center;
     }
 
+    /* Photo-like gradient placeholders */
+    .thumb--bus {
+      background:
+        radial-gradient(circle at 40% 55%, rgba(255,255,255,.1) 0%, transparent 50%),
+        linear-gradient(155deg, #1c3c80 0%, #2c5aaa 45%, #152d60 100%);
+    }
+
+    .thumb--person {
+      background:
+        radial-gradient(circle at 50% 40%, rgba(255,255,255,.12) 0%, transparent 55%),
+        linear-gradient(155deg, #192e62 0%, #3668c0 45%, #142250 100%);
+    }
+
+    .thumb--event {
+      background:
+        radial-gradient(circle at 50% 60%, rgba(255,255,255,.08) 0%, transparent 50%),
+        linear-gradient(155deg, #101e48 0%, #264888 45%, #14265a 100%);
+    }
+
     /* ── Footer CTA ── */
     .footer {
-      background: #10122a;
+      background: #0e1028;
       padding: 20px 18px;
       text-align: center;
     }
@@ -374,20 +376,20 @@
       display: block;
       color: #fff;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 500;
-      letter-spacing: .3px;
-      transition: opacity .2s;
+      letter-spacing: .2px;
+      transition: opacity .18s;
     }
 
-    .footer__btn:hover { opacity: .75; }
+    .footer__btn:hover { opacity: .72; }
 
-    /* ── Responsive tweaks ── */
-    @media (max-width: 420px) {
-      .header { height: 100px; }
-      .header__bg span { font-size: 80px; }
-      .header__logo { font-size: 28px; }
-      .card__thumb { width: 68px; height: 68px; }
+    /* ── Responsive ── */
+    @media (max-width: 440px) {
+      .header { height: 106px; }
+      .header__bg span { font-size: 128px; }
+      .header__logo { font-size: 30px; }
+      .card__thumb { width: 70px; height: 70px; }
     }
   </style>
 </head>
@@ -395,21 +397,19 @@
 
 <div class="shell">
 
-  <!-- Header -->
+  <!-- ── Header ── -->
   <header class="header" role="banner">
-    <div class="header__bg" aria-hidden="true">
-      <span>LETTER</span>
-    </div>
-    <div class="header__logo">Shucle<em>.</em></div>
+    <div class="header__bg" aria-hidden="true"><span>LETTER</span></div>
+    <div class="header__logo">Shucle<span class="dot">.</span></div>
   </header>
 
-  <!-- Meta bar -->
+  <!-- ── Meta bar ── -->
   <div class="meta">
-    <span>서클 레터</span>
-    <span>Issue. 001 &nbsp;|&nbsp; 2026.03.06.</span>
+    <span>셔클 레터</span>
+    <span>Issue.001 &nbsp;|&nbsp; 2026.03.06.</span>
   </div>
 
-  <!-- Summary -->
+  <!-- ── Summary ── -->
   <section class="summary" aria-label="먼저 읽기">
     <p class="summary__title">먼저 읽기</p>
     <ul class="summary__list">
@@ -428,42 +428,28 @@
     </ul>
   </section>
 
-  <!-- Hero -->
-  <figure class="hero" aria-label="서클 지능형 배차 시스템 이미지">
-    <div class="hero__screen" aria-hidden="true">
-      <div class="hero__map-dot"></div>
-      <div class="hero__map-lines">
+  <!-- ── Hero ── -->
+  <figure class="hero" aria-label="서클 지능형 배차 시스템 — 차량 내부 내비게이션 화면">
+    <div class="hero__nav" aria-hidden="true">
+      <div class="nav__dot"></div>
+      <div class="nav__lines">
         <span></span><span></span><span></span>
       </div>
     </div>
-    <div class="hero__dash" aria-hidden="true"></div>
+    <div class="hero__seat" aria-hidden="true"></div>
   </figure>
   <p class="hero-caption">단순한 이동을 넘어 유기적인 서비스 경험을 제공하는 서클의 지능형 배차 시스템</p>
 
-  <!-- Article -->
+  <!-- ── Article ── -->
   <article class="article">
-    <h2 class="article__title">
-      <strong>호텔 모빌리티의 미래,</strong><br>서클 × 워커힐 첫 만남
-    </h2>
+    <h2 class="article__title">호텔 모빌리티의 미래,<br>서클 × 워커힐 첫 만남</h2>
     <div class="article__body">
-      <p>
-        서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로
-        전환하는 실증을 진행했습니다. 넓은 부지 특성상 내부 이동 수요가 많았던 워커힐은
-        기존에 직원과 기사 간 무전 호출 방식으로 서틀을 운영해 왔는데요.
-      </p>
-      <p>
-        이번 도입을 통해 주요 거점 12곳에 키오스크를 설치하고, 전화번호 입력만으로
-        차량을 호출할 수 있는 간편 시스템을 구축했습니다. 이에 따라, 이용객은 카카오톡과
-        문자로 배차 정보와 도착 예정 시간을 안내받으며 대기 시간을 예측할 수 있게 됐습니다.
-        순차 배차가 아닌 호출 배차 방식이 적용되면서 차량 운영의 합리성도 높아졌습니다.
-        직원들 역시, 하루 수십 건에 달하던 전화 응대 부담을 줄이고 고객 응대 품질에
-        더욱 집중할 수 있게 됐습니다. 이번 실증은 서클이 공공 중심 사업 경험을 바탕으로
-        민간 영역까지 모빌리티 서비스를 확장하는 전환점이 되고 있습니다.
-      </p>
+      <p>서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로 전환하는 실증을 진행했습니다. 넓은 부지 특성상 내부 이동 수요가 많았던 워커힐은 기존에 직원과 기사 간 무전 호출 방식으로 서틀을 운영해 왔는데요.</p>
+      <p>이번 도입을 통해 주요 거점 12곳에 키오스크를 설치하고, 전화번호 입력만으로 차량을 호출할 수 있는 간편 시스템을 구축했습니다. 이에 따라, 이용객은 카카오톡과 문자로 배차 정보와 도착 예정 시간을 안내받으며 대기 시간을 예측할 수 있게 됐습니다. 순차 배차가 아닌 호출 배차 방식이 적용되면서 차량 운영의 합리성도 높아졌습니다. 직원들 역시, 하루 수십 건에 달하던 전화 응대 부담을 줄이고 고객 응대 품질에 더욱 집중할 수 있게 됐습니다. 이번 실증은 서클이 공공 중심 사업 경험을 바탕으로 민간 영역까지 모빌리티 서비스를 확장하는 전환점이 되고 있습니다.</p>
     </div>
   </article>
 
-  <!-- Related content -->
+  <!-- ── Related content ── -->
   <section class="related" aria-label="연관 콘텐츠">
     <h3 class="related__title">연관 콘텐츠</h3>
     <div class="cards">
@@ -471,19 +457,17 @@
       <div class="card">
         <div class="card__body">
           <p class="card__title">이용매스의 성과, 1년을 돌아보다</p>
-          <p class="card__desc">
-            서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로
-            전환하는 실증을 진행했습니다.
-          </p>
+          <p class="card__desc">서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로 전환하는 실증을 진행했습니다.</p>
           <a class="card__btn" href="#">자세히 읽기</a>
         </div>
-        <div class="card__thumb thumb--1">
+        <div class="card__thumb thumb--bus">
           <div class="card__thumb-inner" aria-hidden="true">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <rect x="4" y="10" width="28" height="18" rx="3" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.3)" stroke-width="1.2"/>
-              <rect x="10" y="6" width="16" height="6" rx="2" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
-              <circle cx="11" cy="30" r="3" fill="rgba(255,255,255,.3)"/>
-              <circle cx="25" cy="30" r="3" fill="rgba(255,255,255,.3)"/>
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+              <rect x="4" y="11" width="30" height="19" rx="3.5" stroke="rgba(255,255,255,.32)" stroke-width="1.4" fill="rgba(255,255,255,.1)"/>
+              <rect x="10" y="7" width="18" height="6" rx="2.5" stroke="rgba(255,255,255,.22)" stroke-width="1" fill="rgba(255,255,255,.08)"/>
+              <circle cx="11.5" cy="32" r="3" stroke="rgba(255,255,255,.38)" stroke-width="1.4"/>
+              <circle cx="26.5" cy="32" r="3" stroke="rgba(255,255,255,.38)" stroke-width="1.4"/>
+              <line x1="10" y1="19" x2="28" y2="19" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
             </svg>
           </div>
         </div>
@@ -492,18 +476,17 @@
       <div class="card">
         <div class="card__body">
           <p class="card__title">어르신의 이동을 더 자유롭게</p>
-          <p class="card__desc">
-            서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로
-            전환하는 실증을 진행했습니다.
-          </p>
+          <p class="card__desc">서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로 전환하는 실증을 진행했습니다.</p>
           <a class="card__btn" href="#">자세히 읽기</a>
         </div>
-        <div class="card__thumb thumb--2">
+        <div class="card__thumb thumb--person">
           <div class="card__thumb-inner" aria-hidden="true">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <circle cx="18" cy="12" r="6" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/>
-              <path d="M8 30c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
-              <rect x="14" y="24" width="8" height="10" rx="2" fill="rgba(255,255,255,.15)"/>
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+              <circle cx="19" cy="12" r="6" stroke="rgba(255,255,255,.35)" stroke-width="1.4" fill="rgba(255,255,255,.1)"/>
+              <path d="M7 34c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- phone shape -->
+              <rect x="22" y="22" width="9" height="14" rx="2" stroke="rgba(255,255,255,.3)" stroke-width="1.2" fill="rgba(255,255,255,.08)"/>
+              <line x1="24" y1="33" x2="29" y2="33" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
             </svg>
           </div>
         </div>
@@ -512,19 +495,20 @@
       <div class="card">
         <div class="card__body">
           <p class="card__title">데이터로 만드는 공공혁신</p>
-          <p class="card__desc">
-            서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로
-            전환하는 실증을 진행했습니다.
-          </p>
+          <p class="card__desc">서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로 전환하는 실증을 진행했습니다.</p>
           <a class="card__btn" href="#">자세히 읽기</a>
         </div>
-        <div class="card__thumb thumb--3">
+        <div class="card__thumb thumb--event">
           <div class="card__thumb-inner" aria-hidden="true">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <rect x="5" y="22" width="6" height="10" rx="1.5" fill="rgba(255,255,255,.35)"/>
-              <rect x="15" y="16" width="6" height="16" rx="1.5" fill="rgba(255,255,255,.35)"/>
-              <rect x="25" y="10" width="6" height="22" rx="1.5" fill="rgba(255,255,255,.35)"/>
-              <polyline points="8,20 18,14 28,8" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+              <!-- bar chart -->
+              <rect x="5"  y="23" width="7" height="11" rx="1.5" fill="rgba(255,255,255,.3)"/>
+              <rect x="15" y="17" width="7" height="17" rx="1.5" fill="rgba(255,255,255,.3)"/>
+              <rect x="25" y="11" width="7" height="23" rx="1.5" fill="rgba(255,255,255,.3)"/>
+              <polyline points="8.5,21 18.5,15 28.5,9" stroke="rgba(255,255,255,.5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8.5" cy="21" r="1.5" fill="rgba(255,255,255,.6)"/>
+              <circle cx="18.5" cy="15" r="1.5" fill="rgba(255,255,255,.6)"/>
+              <circle cx="28.5" cy="9"  r="1.5" fill="rgba(255,255,255,.6)"/>
             </svg>
           </div>
         </div>
@@ -533,7 +517,7 @@
     </div>
   </section>
 
-  <!-- Footer CTA -->
+  <!-- ── Footer ── -->
   <footer class="footer">
     <a class="footer__btn" href="#">서클 블로그 바로가기</a>
   </footer>
