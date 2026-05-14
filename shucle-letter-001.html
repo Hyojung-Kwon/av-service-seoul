@@ -248,22 +248,28 @@
 
     /* ── Footer CTA ── */
     .footer {
-      background: #0e1028;
-      padding: 20px 18px;
+      background: #fff;
+      padding: 24px 18px 28px;
       text-align: center;
     }
 
     .footer__btn {
-      display: block;
+      display: inline-block;
+      background: #0e1028;
       color: #fff;
       text-decoration: none;
       font-size: 14.5px;
       font-weight: 500;
       letter-spacing: .2px;
-      transition: opacity .18s;
+      padding: 14px 48px;
+      border-radius: 999px;
+      transition: opacity .18s, transform .15s;
     }
 
-    .footer__btn:hover { opacity: .72; }
+    .footer__btn:hover {
+      opacity: .85;
+      transform: translateY(-1px);
+    }
 
     /* ── Responsive ── */
     @media (max-width: 440px) {
