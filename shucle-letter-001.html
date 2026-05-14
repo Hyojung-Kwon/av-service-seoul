@@ -125,11 +125,20 @@
     }
 
     .article__title {
-      font-size: clamp(18px, 3.8vw, 22px);
+      font-size: clamp(16px, 3.5vw, 20px);
       font-weight: 900;
-      color: #0f1630;
+      color: #3e6ef5;
       line-height: 1.38;
       margin-bottom: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 480px) {
+      .article__title {
+        white-space: normal;
+      }
     }
 
     .article__body {
@@ -304,7 +313,7 @@
 
   <!-- ── Article ── -->
   <article class="article">
-    <h2 class="article__title">호텔 모빌리티의 미래,<br>서클 × 워커힐 첫 만남</h2>
+    <h2 class="article__title">호텔 모빌리티의 미래, 서클 × 워커힐 첫 만남</h2>
     <div class="article__body">
       <p>서클은 워커힐 호텔앤리조트와 협업해 호텔 구내 이동 서비스를 디지털 기반으로 전환하는 실증을 진행했습니다. 넓은 부지 특성상 내부 이동 수요가 많았던 워커힐은 기존에 직원과 기사 간 무전 호출 방식으로 서틀을 운영해 왔는데요.</p>
       <p>이번 도입을 통해 주요 거점 12곳에 키오스크를 설치하고, 전화번호 입력만으로 차량을 호출할 수 있는 간편 시스템을 구축했습니다. 이에 따라, 이용객은 카카오톡과 문자로 배차 정보와 도착 예정 시간을 안내받으며 대기 시간을 예측할 수 있게 됐습니다. 순차 배차가 아닌 호출 배차 방식이 적용되면서 차량 운영의 합리성도 높아졌습니다. 직원들 역시, 하루 수십 건에 달하던 전화 응대 부담을 줄이고 고객 응대 품질에 더욱 집중할 수 있게 됐습니다. 이번 실증은 서클이 공공 중심 사업 경험을 바탕으로 민간 영역까지 모빌리티 서비스를 확장하는 전환점이 되고 있습니다.</p>
