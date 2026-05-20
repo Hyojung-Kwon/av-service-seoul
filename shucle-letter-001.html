@@ -8,10 +8,25 @@
   <style>
     @font-face {
       font-family: 'Pretendard';
+      src: url('./셔클 레터 Issue.001_0519_files/Pretendard-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
     @font-face {
       font-family: 'Pretendard';
+      src: url('./셔클 레터 Issue.001_0519_files/Pretendard-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
     @font-face {
       font-family: 'Pretendard';
+      src: url('./셔클 레터 Issue.001_0519_files/Pretendard-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -35,7 +50,8 @@
 
     /* ── Header ── */
     .header { display: block; line-height: 0; }
-    .header__img { width: 100%; height: auto; display: block; }
+    .header__img { width: 100%; max-width: 600px; height: auto; display: block; }
+    img { max-width: 100%; height: auto; }
 
     /* ── Meta bar ── */
     .meta {
