@@ -26,4 +26,7 @@
   Table 구조 전면 재작성 — Outlook 너비 깨짐 방지 최종본
 
 - **[맑은 고딕 HTML](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-malgun.html)**
-  Table 구조 + 맑은 고딕 폰트 적용 — 네이버·지메일 발송용 최신본
+  Table 구조 + 시스템 폰트 적용 (Apple SD Gothic Neo → Malgun Gothic → Noto Sans KR) — 네이버·지메일 발송용
+
+- **[줄바꿈 고정 HTML](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-linebreak.html)**
+  Table 구조 + 시스템 폰트 + 원본 웹 줄바꿈 &lt;br&gt; 고정 적용 — 최신본
