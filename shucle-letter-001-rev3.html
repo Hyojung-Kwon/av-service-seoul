@@ -24,14 +24,24 @@
 
   @media (prefers-color-scheme: dark) {
     body { background-color: #d8dce8 !important; }
-    .wrap-outer { background-color: #d8dce8 !important; }
-    .wrap-main  { background-color: #ffffff !important; }
-    .sec-meta   { background-color: #DDE9FD !important; }
+    .wrap-outer  { background-color: #d8dce8 !important; }
+    .wrap-main   { background-color: #ffffff !important; }
+    .sec-meta    { background-color: #DDE9FD !important; }
     .sec-summary { background-color: #E0ECFF !important; }
     .sec-related { background-color: #E7EEFD !important; }
-    .badge      { background-color: #65A0FF !important; }
+    .badge       { background-color: #65A0FF !important; }
     .btn-primary { background-color: #0A50FF !important; }
   }
+
+  /* Outlook 모바일 다크모드 대응 */
+  [data-ogsc] body        { background-color: #d8dce8 !important; }
+  [data-ogsc] .wrap-outer  { background-color: #d8dce8 !important; }
+  [data-ogsc] .wrap-main   { background-color: #ffffff !important; }
+  [data-ogsc] .sec-meta    { background-color: #DDE9FD !important; }
+  [data-ogsc] .sec-summary { background-color: #E0ECFF !important; }
+  [data-ogsc] .sec-related { background-color: #E7EEFD !important; }
+  [data-ogsc] .badge       { background-color: #65A0FF !important; }
+  [data-ogsc] .btn-primary { background-color: #0A50FF !important; }
 
   /* 모바일 아웃룩 대응: 데스크탑 아웃룩은 @media를 무시하므로 기존 레이아웃 유지 */
   @media only screen and (max-width: 620px) {
@@ -43,11 +53,11 @@
 <body style="margin:0; padding:0; background-color:#d8dce8; color-scheme:light only;">
 
 <!-- 외부 래퍼 -->
-<table class="wrap-outer" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#d8dce8;">
+<table class="wrap-outer" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#d8dce8" style="background-color:#d8dce8;">
 <tr><td align="center" style="padding:0;">
 
 <!-- 메인 컨테이너 600px -->
-<table class="main-container wrap-main" width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; max-width:600px;">
+<table class="main-container wrap-main" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background-color:#ffffff; max-width:600px;">
 
   <!-- ① 헤더 이미지 -->
   <tr>
@@ -59,7 +69,7 @@
 
   <!-- ② 메타바 -->
   <tr>
-    <td class="sec-meta" style="background-color:#DDE9FD; padding:0; border-top:0.5px solid #1761FE; border-bottom:0.5px solid #1761FE;">
+    <td class="sec-meta" bgcolor="#DDE9FD" style="background-color:#DDE9FD; padding:0; border-top:0.5px solid #1761FE; border-bottom:0.5px solid #1761FE;">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="padding:18px 0 17px 36px; font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; font-size:25px; font-weight:600; color:#1761FE;">
@@ -77,7 +87,7 @@
   <tr>
     <td style="padding:62px 36px 62px 36px;">
       <table class="sec-summary" width="100%" cellpadding="0" cellspacing="0" border="0"
-             style="background-color:#E0ECFF; border-radius:16px;">
+             bgcolor="#E0ECFF" style="background-color:#E0ECFF; border-radius:16px;">
         <tr>
           <td style="padding:20px 22px 20px 22px;">
 
@@ -91,7 +101,7 @@
               <tr>
                 <td width="24" valign="middle" style="padding:0;">
                   <table class="badge" width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                         style="background-color:#65A0FF; border-radius:50%;">
+                         bgcolor="#65A0FF" style="background-color:#65A0FF; border-radius:50%;">
                     <tr><td align="center" valign="middle"
                             style="font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; font-size:12px; font-weight:700; color:#ffffff; line-height:1; padding:5.5px 0 2.5px 0;">
                       1
@@ -109,7 +119,7 @@
               <tr>
                 <td width="24" valign="middle" style="padding:0;">
                   <table class="badge" width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                         style="background-color:#65A0FF; border-radius:50%;">
+                         bgcolor="#65A0FF" style="background-color:#65A0FF; border-radius:50%;">
                     <tr><td align="center" valign="middle"
                             style="font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; font-size:12px; font-weight:700; color:#ffffff; line-height:1; padding:5.5px 0 2.5px 0;">
                       2
@@ -127,7 +137,7 @@
               <tr>
                 <td width="24" valign="middle" style="padding:0;">
                   <table class="badge" width="20" height="20" cellpadding="0" cellspacing="0" border="0"
-                         style="background-color:#65A0FF; border-radius:50%;">
+                         bgcolor="#65A0FF" style="background-color:#65A0FF; border-radius:50%;">
                     <tr><td align="center" valign="middle"
                             style="font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; font-size:12px; font-weight:700; color:#ffffff; line-height:1; padding:5.5px 0 2.5px 0;">
                       3
@@ -195,7 +205,7 @@
 
   <!-- ⑧ 연관 콘텐츠 섹션 -->
   <tr>
-    <td class="sec-related" style="background-color:#E7EEFD; padding:16px 36px 56px 36px;">
+    <td class="sec-related" bgcolor="#E7EEFD" style="background-color:#E7EEFD; padding:16px 36px 56px 36px;">
 
       <!-- 섹션 제목 -->
       <p style="margin:0 0 18px 0; font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; font-size:23px; font-weight:600; color:#65A0FF;">
@@ -297,9 +307,9 @@
 
   <!-- ⑨ 푸터 버튼 -->
   <tr>
-    <td class="sec-related" style="background-color:#E7EEFD; padding:22px 20px 68px 20px;" align="center">
+    <td class="sec-related" bgcolor="#E7EEFD" style="background-color:#E7EEFD; padding:22px 20px 68px 20px;" align="center">
       <a href="https://www.shucle.com/story" target="_blank" style="text-decoration:none;">
-        <table class="btn-primary" cellpadding="0" cellspacing="0" border="0" style="background-color:#0A50FF; border-radius:999px; margin:0 auto;">
+        <table class="btn-primary" cellpadding="0" cellspacing="0" border="0" bgcolor="#0A50FF" style="background-color:#0A50FF; border-radius:999px; margin:0 auto;">
           <tr>
             <td align="center" valign="middle" style="padding:15px 90px;">
               <table cellpadding="0" cellspacing="0" border="0">
