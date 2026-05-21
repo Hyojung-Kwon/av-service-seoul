@@ -33,3 +33,6 @@
 
 - **[Rev 2 HTML](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-rev2.html)**
   핵심 요약 숫자 배지 수직 중앙 정렬 수정 — 이메일 복붙 시 숫자 어긋남 해결 (line-height → padding 방식)
+
+- **[Rev 3 HTML](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-rev3.html)**
+  모바일 아웃룩 대응 — @media 쿼리로 컨테이너·이미지 fluid 처리 (배너·히어로·본문 이미지 너비 깨짐 해결)
