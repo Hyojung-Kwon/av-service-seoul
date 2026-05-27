@@ -14,7 +14,7 @@
 ## 셔클 레터 Issue. 001 (2026.05.27.)
 
 - **[HTML 초안](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-rev2.html)**
-  핵심 요약 숫자 배지 수직 중앙 정렬 수정 — 이메일 복붙 시 숫자 어긋남 해결 (line-height → padding 방식)
+  Table 구조 + 프리텐다드 웹폰트 + 원본 디자인 줄바꿈 고정 + 모바일 버튼 링크 작동 및 이미지 크기 일치화 + 세부 컬러 및 디테일 보정 
 
 - **[Rev 3 HTML](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-rev3.html)**
   모바일 아웃룩 대응 — 배너·히어로·본문 이미지 너비 깨짐 해결 + 다크모드 색상 적용 (그라데이션 적용)
