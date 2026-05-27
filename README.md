@@ -1,7 +1,6 @@
 # public_for_sharing
 
-외부 공유를 위한 Repository입니다.
-
+외부 공유를 위한 리포지토리
 ---
 
 ## 콘텐츠 목록
