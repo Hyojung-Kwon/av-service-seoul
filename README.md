@@ -35,7 +35,7 @@
   핵심 요약 숫자 배지 수직 중앙 정렬 수정 — 이메일 복붙 시 숫자 어긋남 해결 (line-height → padding 방식)
 
 - **[Rev 3 HTML](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-rev3.html)**
-  모바일 아웃룩 대응 — 배너·히어로·본문 이미지 너비 깨짐 해결 + 다크모드 색상 적용
+  모바일 아웃룩 대응 — 배너·히어로·본문 이미지 너비 깨짐 해결 + 다크모드 색상 적용 (그라데이션 적용)
 
 - **[Rev 4 HTML](https://hyojung-kwon.github.io/public_for_sharing/shucle-letter-001-rev4.html)**
   카드 그라데이션 제거 — 모바일 아웃룩 연관 콘텐츠 카드 미표시 문제 해결 (linear-gradient → solid white)
